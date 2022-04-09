@@ -1,0 +1,6 @@
+### study stage ###
+eureka-client/
+ribbon-service/
+
+### IntelliJ IDEA ###
+.idea/
