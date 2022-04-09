@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "D:\DevelopKit\Java\XML_DTD\mybatis-3-mapper.dtd">
+<!-- 此处与接口类地址对应 -->
+<mapper namespace="com.example.springbootmybatis.dao.UserDAO">
+    <!-- 此处与接口方法名对应 指定参数类型与返回结果类型-->
+    <select id="getUserById" parameterType="java.lang.String" resultType="com.example.springbootmybatis.entity.User">
+        select * from sys_user where id = #{id}
+    </select>
+</mapper>
