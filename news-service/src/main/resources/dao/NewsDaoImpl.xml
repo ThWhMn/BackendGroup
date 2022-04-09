@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "D:\DevelopKit\Java\XML_DTD\mybatis-3-mapper.dtd">
+<!-- 此处与接口类地址对应 -->
+<mapper namespace="com.example.newsservice.dao.NewsDAO">
+    <!-- 此处与接口方法名对应 指定参数类型与返回结果类型-->
+    <select id="getNewsById" parameterType="java.lang.String" resultType="com.example.newsservice.pojo.News">
+        SELECT * FROM sci_news WHERE id = #{id}
+    </select>
+
+    <insert id="insertNews" parameterType="com.example.newsservice.pojo.News">
+        INSERT INTO sci_news VALUES (
+        #{id}, #{title}, #{type}, #{user_id}, #{link}, #{cover}, #{downloads}, #{gmt_create}, #{create_by}, #{gmt_update}, #{update_by});
+    </insert>
+
+    <select id="getNewsByUserId" parameterType="java.lang.String" resultType="com.example.newsservice.pojo.News">
+        SELECT * FROM sci_news WHERE user_id IN (SELECT id FROM sys_user WHERE id = #{userId});
+    </select>
+</mapper>
